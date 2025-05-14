@@ -1,15 +1,24 @@
-﻿var b = Convert.ToInt32(Console.ReadLine());
+﻿var a = Convert.ToInt32(Console.ReadLine());
+var Min = int.MaxValue;
 var k = 0;
-var sum = 0;
-while (b != 0)
+for (int i = 0; i < a; i++)
 {
-    k++;
-    if (b > 0 && b < 256 && b % 2 == 0)
+    var d = Convert.ToInt32(Console.ReadLine());
+        if (d < Min)
     {
-        sum += b;
+        Min = d;
     }
-    b = Convert.ToInt32(Console.ReadLine());
-
+    if (d > 80)
+    {
+        k++;
+    }
 }
-Console.WriteLine(k);
-Console.WriteLine(sum);
+Console.WriteLine(Min);
+if (k == 1)
+{
+    Console.WriteLine("Yes");
+}
+else
+{
+    Console.WriteLine("No");
+}
