@@ -1,19 +1,19 @@
 ﻿var a = Convert.ToInt32(Console.ReadLine());
-var Min = int.MaxValue;
+var Max = int.MinValue;
 var k = 0;
 for (int i = 0; i < a; i++)
 {
     var d = Convert.ToInt32(Console.ReadLine());
-        if (d < Min)
+        if (d > Max)
     {
-        Min = d;
+        Max = d;
     }
-    if (d > 80)
+    if (d < 30)
     {
         k++;
     }
 }
-Console.WriteLine(Min);
+Console.WriteLine(Max);
 if (k == 1)
 {
     Console.WriteLine("Yes");
