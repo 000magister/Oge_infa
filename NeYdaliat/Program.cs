@@ -1,24 +1,17 @@
 ﻿var a = Convert.ToInt32(Console.ReadLine());
-var Max = int.MinValue;
-var k = 0;
-for (int i = 0; i < a; i++)
+var sum = 0.0;
+var k = 0.0;
+while (a != 0)
 {
-    var d = Convert.ToInt32(Console.ReadLine());
-        if (d > Max)
+    if (a % 8 == 0)
     {
-        Max = d;
-    }
-    if (d < 30)
-    {
+        sum += a;
         k++;
     }
+    a = Convert.ToInt32(Console.ReadLine());
 }
-Console.WriteLine(Max);
-if (k == 1)
-{
-    Console.WriteLine("Yes");
-}
-else
+Console.WriteLine(Math.Round(sum / k, 1));
+if (k == 0)
 {
     Console.WriteLine("No");
 }
