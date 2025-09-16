@@ -1,17 +1,54 @@
-﻿var a = Convert.ToInt32(Console.ReadLine());
-var sum = 0.0;
-var k = 0.0;
-while (a != 0)
+﻿class Program
 {
-    if (a % 8 == 0)
+    static void Main(string[] args)
     {
-        sum += a;
-        k++;
+        while (true)
+        {
+            Console.WriteLine("Здаров,это игра камень ножницы бумага!");
+            var WordsUsed = new List<string>{ "rock", "paper", "scissors" };
+            var Player1 = Console.ReadLine().ToLower();
+            if (!WordsUsed.Contains(Player1))
+            {
+                Console.WriteLine("Error! You Fucking stupid SCOVORODKA Blyat!!!!");
+                continue;
+            }
+            var Player2 = Console.ReadLine().ToLower();
+            if (!WordsUsed.Contains(Player2))
+            {
+                Console.WriteLine("Error! You Fucking stupid SCOVORODKA Blyat!!!!");
+                continue;
+            }
+            if (Player1 == "rock" && Player2 == "scissors")
+            {
+                Console.WriteLine("Player1 Wins!");
+            }
+            if (Player1 == "rock" && Player2 == "paper")
+            {
+                Console.WriteLine("Player2 Wins!");
+            }
+            if (Player1 == Player2)
+            {
+                Console.WriteLine("Draw!!! Restart Game");
+            }
+            if (Player1 == "paper" && Player2 == "scissors")
+            {
+                Console.WriteLine("Player2 Wins!");
+            }
+            if (Player1 == "paper" && Player2 == "rock")
+            {
+                Console.WriteLine("Player1 Wins!");
+            }
+            if (Player1 == "scissors" && Player2 == "rock")
+            {
+                Console.WriteLine("Player2 Wins!");
+            }
+            if (Player1 == "scissors" && Player2 == "paper")
+            {
+                Console.WriteLine("Player1 Wins!");
+            }
+        }
+            
     }
-    a = Convert.ToInt32(Console.ReadLine());
-}
-Console.WriteLine(Math.Round(sum / k, 1));
-if (k == 0)
-{
-    Console.WriteLine("No");
+        enum Game { Rock, paper, scissors }
+        
 }
